@@ -1,0 +1,319 @@
+/* General Styles */
+body {
+    font-family: 'Funnel Sans','Delius Swash Caps', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #fafafa; /* Soft off-white for the background */
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: #2a3a70; /* Indigo Blue for headings */
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a3a70; /* Indigo Blue for Navbar */
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Logo Styling */
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px; /* Reduced gap between the bars */
+    padding: 5px; /* Smaller padding to minimize the size */
+}
+
+.hamburger .bar {
+    width: 25px; /* Slightly wider than previous but still minimal */
+    height: 3px; /* Keep it thin for a more refined look */
+    background-color: white;
+    border-radius: 2px; /* Rounded corners */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide the links by default */
+        position: absolute;
+        top: 100%; /* Set the top position to directly below the navbar */
+        right: 0;
+        background-color: #2a3a70;
+        width: 100%;
+        text-align: center;
+        gap: 0.4rem;
+        margin-top: 0; /* Remove the space between the navbar and the nav links */
+    }
+
+    .nav-links li {
+        padding: 0.5rem;
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger on small screens */
+    }
+
+    /* When the menu is active, show the links */
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+/* Signup Section */
+.signup-section {
+    text-align: center;
+    background-color: #f1c6c6; /* Light Sakura Pink */
+    padding: 2rem 1rem;
+    color: #2a3a70; /* Indigo Blue for text */
+}
+
+.signup-section button {
+    padding: 0.5rem 1rem;
+    background-color: #d04e44; /* Deep Red for buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-section button:hover {
+    background-color: #9e3e33; /* Darker Red for hover effect */
+}
+
+/* Members Section */
+.members-section {
+    padding: 2rem;
+    text-align: center;
+    background-color: #fafafa; /* Off-White for Members Section */
+}
+
+.members-section img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+/* Location Section */
+.location-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.location-section img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+/* Link Styling */
+.aiu-link {
+    color: #4fe0b0; /* Mint Green color */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.aiu-link:hover {
+    color: #d957d9; /* Pink color on hover */
+    transform: scale(1.1); /* Slightly enlarge the link */
+}
+
+.aiu-link:focus {
+    outline: none; /* Remove default focus outline */
+    border-bottom: 2px solid #4fe0b0; /* Mint Green bottom border on focus */
+}
+
+
+
+
+.activities-section {
+    background-color: #f1c6c6;
+    padding: 2rem;
+    text-align: center;
+}
+
+.activities-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2a3a70;
+}
+
+.activity-list {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping of items */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 2rem;
+    scroll-behavior: smooth; /* Smooth scroll when scrolling to the end */
+    width: 100%; /* Ensure it takes full width */
+}
+
+.activity-item {
+    flex: 0 0 auto; /* Prevent resizing */
+    width: 300px; /* Set a fixed width for each item */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+}
+
+.activity-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.activity-item img {
+    width: 100%;
+    height: 400px; /* Set a fixed height to crop images */
+    object-fit: cover; /* Ensures images fill the area without stretching */
+    display: block;
+    border-radius: 8px;
+}
+
+.activity-item h3 {
+    font-size: 1.2rem;
+    color: #2a3a70;
+    margin: 0.5rem 1rem;
+}
+
+.activity-item p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0 1rem 1rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .activity-item {
+        width: 45%; /* Adjust the width to 45% for tablets or smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .activity-item {
+        width: 80%; /* Make each item take full width on small phone screens */
+
+        margin: 0.5rem 0; /* Add some margin for spacing between items */
+    }
+
+    .activities-section {
+        padding: 1rem; /* Reduce padding for smaller screens */
+    }
+
+    .activity-item img {
+        height: 250px; /* Adjust image height for better scaling on small screens */
+    }
+}
+
+
+
+/* Q&A Section */
+.qna-section {
+    padding: 2rem 1rem;
+    background-color: #fafafa; /* Off-white background for Q&A */
+    max-width: 600px; /* Optional: Set a max-width for the entire form */
+    margin: 0 auto; /* Center the Q&A section */
+}
+
+.qna-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.qna-section input, .qna-section textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.qna-section button {
+    padding: 0.5rem;
+    background-color: #2a3a70; /* Indigo Blue for button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.qna-section button:hover {
+    background-color: #1c3e99;
+}
+
+/* Optional: Styling for confirmation and error messages */
+#confirmation, #error {
+    margin-top: 1rem;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#confirmation {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+#error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2a3a70; /* Indigo Blue */
+    color: white; /* White text for good contrast */
+}
+
+/* Links inside the footer */
+.footer a {
+    color: #ffd700; /* Gold color for links */
+    text-decoration: none; /* Remove underline for a cleaner look */
+    transition: color 0.3s ease; /* Smooth color transition for hover effect */
+}
+
+/* Links hover effect */
+.footer a:hover {
+    color: #ffffff; /* Change to white on hover for better visibility */
+    text-decoration: underline; /* Underline the link on hover for emphasis */
+}
